@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP UP CENTER — Pulsa • Kuota • Game</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Ikon Tambahan -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">TOPUP CENTER</span>
+      </a>
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">Online 24 Jam</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Isi Pulsa, Kuota & Game</h1>
+      <p class="hero-subtitle">Pembayaran QRIS — Proses Otomatis — Instan & Terpercaya</p>
+    </section>
+
+    <!-- Kategori Tab -->
+    <section class="category-section">
+      <div class="tabs">
+        <button class="tab-btn active" data-category="pulsa">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Pulsa</span>
+        </button>
+        <button class="tab-btn" data-category="kuota">
+          <i class="fas fa-wifi"></i>
+          <span>Kuota</span>
+        </button>
+        <button class="tab-btn" data-category="game">
+          <i class="fas fa-gamepad"></i>
+          <span>Game</span>
+        </button>
+        <button class="tab-btn" data-category="lainnya">
+          <i class="fas fa-bolt"></i>
+          <span>Lainnya</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Daftar Produk -->
+    <section class="section products-section">
+      <div class="section-header">
+        <h2 id="categoryTitle">💰 Pulsa</h2>
+        <span class="product-count" id="productCount">0 Produk</span>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <!-- Loading State -->
+        <div class="loading-box">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Memuat daftar produk...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Pemesanan -->
+    <section class="section form-box" id="orderForm" style="display:none;">
+      <div class="form-header">
+        <h2><i class="fas fa-shopping-cart"></i> Data Pesanan</h2>
+      </div>
+      
+      <div class="selected-product-info" id="selectedProductInfo">
+        <span class="prod-name">-</span>
+        <span class="prod-price">Rp 0</span>
+      </div>
+
+      <div class="input-group">
+        <label for="destination">Nomor Tujuan / User ID</label>
+        <input type="text" id="destination" placeholder="Contoh: 08123456789 / 12345678" required>
+        <p class="input-note">Masukkan nomor HP atau User ID game dengan benar</p>
+      </div>
+
+      <div class="price-summary">
+        <div class="price-row">
+          <span>Subtotal</span>
+          <span id="subtotal">Rp 0</span>
+        </div>
+        <div class="price-row total-row">
+          <span>Total Pembayaran</span>
+          <span id="totalPrice">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="payBtn" class="pay-btn">
+        <i class="fas fa-qrcode"></i> Buat QRIS Pembayaran
+      </button>
+    </section>
+
+    <!-- QRIS Pembayaran -->
+    <section class="section qris-box" id="qrisBox" style="display:none;">
+      <div class="qris-header">
+        <h2><i class="fas fa-credit-card"></i> Pembayaran QRIS</h2>
+      </div>
+
+      <div class="qris-content">
+        <div class="qris-image">
+          <img id="qrisImg" src="" alt="QRIS Pembayaran">
+        </div>
+
+        <div class="qris-details">
+          <div class="detail-row">
+            <span>Total Bayar</span>
+            <strong id="payAmount">Rp 0</strong>
+          </div>
+          <div class="detail-row">
+            <span>ID Transaksi</span>
+            <span id="txId">-</span>
+          </div>
+          <div class="detail-row">
+            <span>Metode</span>
+            <span>QRIS (Semua Bank & E-Wallet)</span>
+          </div>
+        </div>
+
+        <a id="payLink" href="" target="_blank" class="pay-link">
+          <i class="fas fa-external-link-alt"></i> Buka Pembayaran di Aplikasi
+        </a>
+
+        <div class="status-box" id="statusBox">
+          <i class="fas fa-clock status-icon"></i>
+          <p id="statusText">Menunggu pembayaran...</p>
+          <p class="status-hint">Silakan scan QRIS di atas untuk membayar</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>⚡ Top Up Center — Layanan 24 Jam Non-Stop</p>
+      <p class="footer-note">Harga otomatis terupdate | Sistem Otomatis</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
